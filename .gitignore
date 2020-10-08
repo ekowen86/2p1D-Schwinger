@@ -1,0 +1,5 @@
+.DS_Store
+/batch/*
+/plots/*
+/old_plots/*
+/papers/*
