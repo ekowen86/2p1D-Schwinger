@@ -187,7 +187,7 @@ int main(int argc, char **argv) {
       name += ".dat";
       sprintf(fname, "%s", name.c_str());
       fp = fopen(fname, "a");
-      fprintf(fp, "%d %d\n", iter, top_int);
+      fprintf(fp, "%d %d %e\n", iter, top_int, top);
       fclose(fp);
 
       index = top_int + (histL-1)/2;
@@ -298,16 +298,17 @@ int hmc(Complex gauge[LX][LY][D], param_t p, int iter) {
   if (iter >= p.therm) Hold = measAction(mom, gauge, chi, p, false);
   trajectory(mom, gauge, phi, p, iter);
   if (iter >= p.therm) H = measAction(mom, gauge, phi, p, true);
+  double dH = H-Hold;
 
   if (iter >= 2*p.therm) {
     hmccount++;
-    expdHAve += exp(-(H-Hold));
-    dHAve += (H-Hold);
+    expdHAve += exp(-dH);
+    dHAve += dH;
   }
 
   // Metropolis accept/reject step
   if (iter >= p.therm) {
-    if ( drand48() > exp(-(H-Hold)) ) copyLat(gauge, gaugeOld);
+    if ( drand48() > exp(-dH) ) copyLat(gauge, gaugeOld);
     else accept = 1;
   }
 

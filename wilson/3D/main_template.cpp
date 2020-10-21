@@ -215,7 +215,7 @@ int main(int argc, char **argv) {
 	name += ".dat";
 	sprintf(fname, "%s", name.c_str());
 	fp = fopen(fname, "a");
-	fprintf(fp, "%d %d\n", iter, top_int[z]);
+	fprintf(fp, "%d %d %e\n", iter, top_int[z], top);
 	fclose(fp);
 
 	index[z] = top_int[z] + (histL-1)/2;

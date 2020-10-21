@@ -9,11 +9,11 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
-id = "48_1_10000_p0"
-L = int(48) # lattice size
+id = "24_5_2000_p300"
+L = int(24) # lattice size
 R_half = int(L / 2) # half lattice size
-R_min = 10 # min R value for fit
-R_max = 24 # max R value for fit
+R_min = 6 # min R value for fit
+R_max = 12 # max R value for fit
 
 def corr_fit(r, m, z):
     a = z * np.exp(-m * r)

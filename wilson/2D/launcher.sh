@@ -43,7 +43,7 @@ HMC_CHKPT=5000
 # If non-zero, read in the HMC_CHKPT_START gauge field.
 HMC_CHKPT_START=0
 # HMC time steps in the integration
-HMC_NSTEP=40
+HMC_NSTEP=30
 # HMC trajectory time
 HMC_TAU=1.0
 
@@ -51,7 +51,7 @@ HMC_TAU=1.0
 RNG_SEED=1234
 
 # DYNAMIC (1) or QUENCHED (0)
-DYN_QUENCH=0
+DYN_QUENCH=1
 
 # Lock the Z gauge to unit (1) or allow z dynamics (0)
 ZLOCKED=1

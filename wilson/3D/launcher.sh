@@ -45,7 +45,7 @@ HMC_CHKPT=5000
 # If non-zero, read in the HMC_CHKPT_START gauge field.
 HMC_CHKPT_START=0
 # Number of HMC steps in the integration
-HMC_NSTEP=40
+HMC_NSTEP=30
 # HMC trajectory time
 HMC_TAU=1.0
 

@@ -36,9 +36,9 @@ fi
 mkdir batch
 NAME=batch/schw_${L}_${NZ}_${BETA1000}_${M1000}
 echo ${NAME}
-rm -r ${NAME}
+[ ! -e ${NAME} ] || rm -r ${NAME}
 cp -r wilson/${D}D ./${NAME}
 # cp -r staggered/${D}D ./${NAME}
 
 (cd ${NAME}; ./launcher.sh ${L} ${NZ} ${BETA} ${BETAZ} ${M} \
-    ${N_THERM} ${N_SWEEPS} ${N_DATA} ${WF_STEPS} ${WF_DT})
+    ${N_THERM} ${N_SWEEPS} ${N_DATA} ${WF_STEPS} ${WF_DT};)
